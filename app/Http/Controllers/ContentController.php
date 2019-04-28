@@ -25,9 +25,14 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $param = [
+            'title' => $request->title,
+            'body' => $request->body
+        ];
+        DB::table('contents')->insert($param);
+        return redirect('/contents');
     }
 
     /**
