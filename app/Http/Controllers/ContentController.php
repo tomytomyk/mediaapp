@@ -88,6 +88,7 @@ class ContentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('contents')->where('id', $id)->delete();
+        return redirect('/contents');
     }
 }
