@@ -1,3 +1,6 @@
+<style>
+	.pagination li{ display: inline-block; }
+</style>
 <h1>aaaa</h1>
 <table>
 	@foreach ($params as $param)
@@ -14,9 +17,10 @@
 		</tr>
 	@endforeach
 </table>
-	<form action="/contents/create" method="get">
+{{ $params->links() }}
+<form action="/contents/create" method="get">
 		{{ csrf_field() }}
 			<input type="text" name="title">
 			<input type="text" name="body">
-			<input type="submit" value="send">
+			<input type="submit" value="投稿">
 	</form>

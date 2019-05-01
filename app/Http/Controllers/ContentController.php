@@ -16,7 +16,7 @@ class ContentController extends Controller
      */
     public function index(Request $request)
     {
-        $params = DB::table('contents')->get();
+        $params = DB::table('contents')->paginate(3);
         return view('contents.index', ['params' => $params]);
     }
 
